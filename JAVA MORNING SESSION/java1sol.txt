@@ -1,0 +1,144 @@
+Assignments solutions
+
+1.
+import java.util.*; 
+
+public class Accolite2
+{ 
+	
+    public static  void main(String args[])throwsIOException {
+        
+        Scanner in=new Scanner(System.in);
+
+        String s=in.nextLine();
+ 
+        Stack<Character> opStack = new Stack<>();
+        Stack<Integer> numStack = new Stack<>();
+ 
+        int i = 0;
+        while (i < s.length()) {
+            if (Character.isDigit(s.charAt(i))) {
+                int num = 0;
+                while (i < s.length() && Character.isDigit(s.charAt(i))) {
+                    num = num * 10 + Character.getNumericValue(s.charAt(i));
+                    i++;
+                }
+                numStack.push(num);
+            } else {
+                char op = s.charAt(i);
+                if (opStack.isEmpty()) {
+                    opStack.push(op);
+                    i++;
+                } else if (op == '+' || op == '-') {
+                    char top = opStack.peek();
+                    if (top == '(') {
+                        opStack.push(op);
+                        i++;
+                    } else {
+                        calculate(numStack, opStack);
+                    }
+                } else if (op == '*' || op == '/') {
+                    char top = opStack.peek();
+                    if (top == '(') {
+                        opStack.push(op);
+                        i++;
+                    } else if (top == '*' || top == '/'||top=='%') {
+                        calculate(numStack, opStack);
+                    } else if (top == '+' || top == '-') {
+                        opStack.push(op);
+                        i++;
+                    }
+                } else if (op == '(') {
+                    opStack.push(op);
+                    i++;
+                } else if (op == ')') {
+                    while (opStack.peek() != '(') {
+                        calculate(numStack, opStack);
+                    }
+                    opStack.pop();
+                    i++;
+                }
+            }
+        }
+ 
+        while (!opStack.isEmpty()) {
+            calculate(numStack, opStack);
+        }
+ 
+        System.out.println( numStack.peek());
+    }
+     
+    public static void calculate(Stack<Integer> numStack, Stack<Character> opStack) {
+        int num2 = numStack.pop();
+        int num1 = numStack.pop();
+         
+        char op = opStack.pop();
+         
+        int ans = 0;
+         
+        switch(op) {
+            case '+':
+                ans = num1 + num2;
+            break;
+            case '-':
+                ans = num1 - num2;
+            break;
+            case '*':
+                ans = num1 * num2;
+            break;
+            case '/':
+                ans = num1 / num2;
+            case '%':
+                ans = num1 % num2;
+            break;
+        }
+         
+        numStack.push(ans);
+    }
+}
+
+Q2. Display flag of USA using JAVA.
+
+
+public class Accolite {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+         String p1 = "* * * * * * ==================================\n * * * * *  ==================================";
+  String p2 = "==============================================";
+  for (int i = 0; i < 4; i++) {
+   System.out.println(p1);
+  }
+  System.out.println("* * * * * * ==================================");
+  for (int i = 0; i < 6; i++) {
+   System.out.println(p2);
+        // TODO code application logic here
+    }
+    
+}
+}
+
+output:
+
+* * * * * * ==================================
+ * * * * *  ==================================
+* * * * * * ==================================
+ * * * * *  ==================================
+* * * * * * ==================================
+ * * * * *  ==================================
+* * * * * * ==================================
+ * * * * *  ==================================
+* * * * * * ==================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+
+
+
+
