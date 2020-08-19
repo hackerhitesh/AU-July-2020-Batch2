@@ -1,0 +1,186 @@
+
+1. String
+	Write a Java program to replace each substring of a given string that matches the given regular expression with the given replacement
+
+
+package accolite;
+import java.util.*;
+/**
+ *
+ * @author hites
+ */
+public class accolite3 {
+    
+    /**
+     *
+     * @param args
+     */
+    public static  void main(String args[]) {
+        
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter String");
+        String s=in.nextLine();
+        System.out.println("Enter regular Expression");
+        String regex=in.nextLine();
+        System.out.println("Enter string to be replaced");
+        String replace=s.replaceAll(regex,in.nextLine());
+        System.out.println(replace);
+        
+        
+        
+        
+        
+     }
+}
+
+
+
+
+2. Collection
+	Write a Java program to get a reverse order view of the keys contained in a given map
+
+package accolite;
+import java.util.*;
+/**
+ *
+ * @author hites
+ */
+public class accolite4 {
+    
+    public static void main(String args[])
+    {
+        TreeMap <String,String> tree_map1 = new TreeMap <String,String> ();
+
+  
+  tree_map1.put("2", "elephant");
+  tree_map1.put("1", "cow");
+  tree_map1.put("4", "dog");
+  tree_map1.put("3", "cat");
+
+  System.out.println("Orginal TreeMap content: " + tree_map1);
+  System.out.println("Reverse order view of the keys: " + tree_map1.descendingKeySet());
+ }
+}
+
+
+
+3 Exception
+	Write your own unchecked Exception and throw it from you counter programme which counts 1 to 100.When you get Prime no while counting then throw this Exception and catch this to print you exception message
+
+package accolite;
+import java.math.*;
+import java.util.*;
+/**
+ *
+ * @author hites
+ */
+
+ class AgeDoesnotMatchException extends Throwable{
+   AgeDoesnotMatchException(String msg){
+      super(msg);
+   }
+}
+
+public class Accolite5{
+  
+    
+      
+ 
+   public static void main(String args[]) {
+      Scanner sc= new Scanner(System.in);
+      
+        int i=1;
+       try {
+          
+           for( i=1;i<100;i++)
+               if(isPrime(i))
+               {
+            AgeDoesnotMatchException ex = new AgeDoesnotMatchException("Prime number");
+            throw ex;
+         }else
+           
+           System.out.println(""+i);
+      }catch(AgeDoesnotMatchException e) {
+         e.printStackTrace();
+      }
+       finally{
+       System.out.println(i);
+       }
+     
+   }
+   public static boolean isPrime(int n) {  
+       if (n <= 1) {  
+           return false;  
+       }  
+       for (int i = 2; i < Math.sqrt(n); i++) {  
+           if (n % i == 0) {  
+               return false;  
+           }  
+       }  
+       return true;  
+   }  
+}  
+
+
+
+4. Serialization
+	Write a programme to serialize 3 fields out of 5 and deserialize it. Use UUID to prvent object mutation
+import java.util.UUID;
+import java.io.*;
+
+
+public class College implements Serializable {
+    private static final UUID SerialVerisonUID= UUID.randomUUID();
+    public int USNNO;
+    public String name;
+    public String College_name;
+    public transient String branch;
+    public transient int semester;
+}
+
+
+public class Serial {
+    public static void main(String[] args) {
+        College c=new College();
+        c.semester=8;
+        c.name="HITESH";
+        c.USNNO="4ni16cs039";
+	c.branch="CSE"
+	c.College_name="NIE MYSORE";
+        try{
+            FileOutputStream fileout= new FileOutputStream("/Documents/College.txt");
+            ObjectOutputStream out = new ObjectOutputStream(fileout);
+            out.writeObject(s);
+            out.close();
+            fileout.close();
+            System.out.println("data saved");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+
+public class Deserial {
+    public static void main(String[] args) throws IOException,ClassNotFoundException{
+        College c =null;
+        try{
+            FileInputStream file=new FileInputStream("/Documents/College.txt");
+            ObjectInputStream obj=new ObjectInputStream(file);
+            c=(College) obj.readObject();
+            obj.close();
+            file.close();
+        }
+        finally {
+            System.out.println(c.name+"\n "+c.USNNO +"\n "+ c.branch  +"\n "+ c.semester+"\n "+  c.section);
+            
+        }
+
+    }
+}
+
+}
