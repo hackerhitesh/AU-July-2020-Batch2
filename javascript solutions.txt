@@ -1,0 +1,289 @@
+javascript assignment solution
+
+Name -Hitesh kumar
+Accolite University(INT478)
+
+
+Question 1.
+ Array methods implementation
+
+1.
+concat()
+
+var a=["Javascript","is"]
+var b=["an","interesting","language"]
+var res=a.concat(b)
+console.log(res);
+
+Output
+  "Javascript","is", "an","interesting","language"]
+
+**********************************************************************************
+
+2.every()
+
+var a = [87, 45, 82, 47]
+function lessThanHundred(array){
+return array<=100}
+console.log(array.every((lessThanHundred)));
+
+Output:-true
+**********************************************************************************
+
+3.
+
+filter()
+
+var ages = [32, 33, 16, 40];
+
+function checkAdult(age) {
+  return age >= 18;
+}
+console.log(age.filter((check)));
+
+Output:- [32,33,40]
+**********************************************************************************
+
+4.forEach()
+
+var numbers = [65, 44, 12, 4];
+numbers.forEach(myFunction)
+
+function myFunction(item, index, arr) {
+  arr[index] = item * 10;
+}
+console.log(numbers)
+Output:-
+
+650,440,120,40
+
+
+**********************************************************************************
+
+5.indexOf()
+
+var array = [17, 30, 26, 50,85,47,96,25,1,4];
+array.indexOf(26);
+
+Output:-2
+**********************************************************************************
+
+6.Join()
+
+var a = ["Banana", "Orange", "Apple", "Mango"];
+var result=a.join();
+console.log(result)
+Output: Banana,Orange, Apple, Mango
+**********************************************************************************
+
+7.lastindexof()
+
+var elem=["one","two","three","four","one","two"]
+elem.lastIndexOf("two")
+output:-5
+**********************************************************************************
+
+8. map()
+
+var numbers = [4, 9, 16, 25];
+
+numbers.map(Math.sqrt);
+console.log(numbers)
+ (4) [450, 40, 120, 450]
+**********************************************************************************
+
+9.pop()
+
+var array=[1,2,3,4]
+array.pop()
+console.log(array);
+Output:-[1,2,3]
+**********************************************************************************
+
+10.push()
+
+var array=[1,2,3,4,7,8,9]
+array.push(5)
+console.log(array);
+output:-[1,2,3,4,7,8,9,5]
+**********************************************************************************
+
+11.reduce()
+
+var numbers = [175, 50, 25];
+function change(one, two) {
+  return one - two;
+}
+console.log(array.reduce(change))
+Output:-100
+**********************************************************************************
+
+12.reduceRight()
+
+var array=[100,200,300,400,500]
+function change(one, two) {
+  return one - two;
+}
+console.log(array.reduceRight(change))
+Output:5 -500
+
+**********************************************************************************
+-
+13.reverse()
+
+var num=[1,2,3,4,5,6]
+num.reverse()
+Output:-(4) [6,5,4, 3, 2, 1]
+
+**********************************************************************************
+
+14.shift()
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+ fruits.shift();
+console.log(fruits)
+
+output: ["Orange", "Apple", "Mango"]
+**********************************************************************************
+
+15.slice()
+
+var a=[1,2,3,4,5,6]
+a.slice(1,4)
+Output:-(2) [2, 3, 4]
+
+**********************************************************************************
+
+16.some()
+
+var ages = [3, 10, 18, 20];
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+console.log(ages.some(checkAdult))
+output:-true
+**********************************************************************************
+
+17.tosource()
+
+
+  function Student(name, class, school, age) {
+  this.name = name;
+  this.class = class;
+  this.school = school;
+  this.age = age;
+}
+
+student1 = new Student('hitesh', '7', 'karens', '14');
+
+student1.toSource();
+
+Output:-name:"hitesh",class:"7",school:"karens",age:"14"
+**********************************************************************************
+
+18.sort()
+
+var array=["c","d","e","a","oll"]
+array.sort()
+Output:-(5) ["a", "c", "d", "e", "oll"]
+**********************************************************************************
+-
+19.splice()
+
+var arr = ["I", "study", "JavaScript", "right", "now"];
+
+arr.splice(0, 3, "Let's", "dance");
+
+alert( arr ) ;
+
+output-->  ["Let's", "dance", "right", "now"]
+**********************************************************************************
+
+20.tostring()
+
+var a=["hi","te","sh","nie"]
+a.toString()
+output:-"hi,te,sh,nie"
+**********************************************************************************
+
+21.unshift()
+
+var elem=["aa","bb","cc"]
+elem.unshift("1","1")
+console.log(elem)
+output:-(5) ["1", "2", "aa", "bb", "cc"]
+
+**********************************************************************************
+
+
+Question 2
+
+Difference between \n and \r
+
+\n->  \n stands for new line
+
+\r > stands for carriage return 
+
+
+The \n character is used to find a newline character
+The newline character moves the cursor to the next line of the console or whatever output device that is being used.
+
+printf("Hello\n"); 
+will give the following output :
+
+Hello 
+| 
+
+Carriage return or \r moves the cursor to the very beginning of the current line on the output device
+
+printf("Hello\r"); 
+will give the following output :
+
+|Hello 
+
+
+
+**********************************************************************************
+
+
+Question 3
+
+solution
+
+
+(a).
+Take string input from a user
+
+solution--
+
+I will use prompt feature to take input from user
+
+var person = prompt("Please enter your name", "Hitesh");
+
+console.log( "Hello " + person + "! How are you today?");
+
+
+(b.)
+var reg1=/^The/;
+var reg2=/^the/;
+var reg3=/hello$/;
+var reg4=/h[a,e,i,o,u]?.t$/
+
+if((reg1.test("the man says hello") || reg2.test("The sun is aahahathello") ) && reg3.test("The man reads Othello") )
+{
+    console.log("Test1: true");
+}
+else{
+console.log("Test1:false");
+}
+if(reg4.test("The sun is hoot")||reg4.test("Man is of 5 feet   height"))
+{ console.log("Test2:true");
+}
+else{ console.log("Test2:false");}
+
+----------------------------------------------------------------------------------------------------------------------
+
+Thank you!!.
+	
