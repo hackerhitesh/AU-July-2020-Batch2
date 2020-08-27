@@ -1,0 +1,116 @@
+
+
+.cssa{
+
+    color:red;
+    font-size:50px;
+    text-align:center;
+
+}
+
+.cssb{
+     color:blue;
+     font-size:22px;
+     text-align:center;
+     letter-spacing:3px;
+
+
+}
+.cssc{
+
+    border-width:4px;
+    border-style:solid;
+    background-color:lightseagreen;
+    background-image:url();
+     border-color:slategray;
+}
+
+.cssd{
+
+    color:white;
+    background-color:red;
+    border-width:5px;
+    border-style:solid;
+     text-align:center;
+     border-color:rgb(17, 17, 17);
+}
+
+
+.csse{
+    color:white;
+    background-color:orangered;
+    border-width:5px;
+    border-style:solid;
+    text-align:center;
+    border-color:orange;
+}
+.cssf{
+
+    color:white;
+    text-align:center;
+    background-color:orange;
+    border-color:orange;
+    border-style:solid;
+    border-width:4px;
+}
+.cssg{
+    background-image:url(https://cdn.lifehack.org/wp-content/uploads/2015/03/50-anniversary-cover1.jpg);
+    color:white;
+    text-align:center;
+    border-style:solid;
+    border-color:red;
+    border-width:6px;
+}
+
+.cssh{
+
+    color:black;
+    text-align:center;
+    background-color:greenyellow;
+    background-image: url();
+    border-color:orange;
+    border-width:8px;
+    border-style:solid;
+
+}
+.cssj{
+    color:black;
+    background-color:darkslateblue;
+    border-color:darkslateblue;
+    border-style:solid;
+    border-width:4px;
+    text-align:center;
+
+}
+.cssk
+{
+    color:black;
+    text-align:right;
+    font-size:25px;
+}
+.aplha
+{
+    color:red;
+    background-color:white;
+    text-align:right;
+
+}
+.beta{
+    color:black;
+    font-size:25px;
+    align-items:center;
+}
+
+
+
+
+.gama{
+    background-color:rgb(179, 169, 241);
+    font-size:20px;
+    color:black;
+    border-width:5px;
+    border-style:solid;
+    border-color:rgb(179, 169, 241);
+
+}
+
